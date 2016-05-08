@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  ul
+    each day in data.Data
+      li= day.Label
+      ul
+        each score in day.Scores
+          li
+            div
+              div= score.StatusLabel
+              div= score.HomeTeam.label
+              div= score.AwayTeam.Name + ' ' + score.AwayTeam.Score

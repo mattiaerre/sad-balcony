@@ -9,34 +9,22 @@ var converter = require('../../domain/converter');
 // specs
 describe('given a number converter', function () {
   describe('when converting from arabic into roman', function () {
-    it('it should convert 1 into I', function () {
-      var roman = converter.arabic2roman(1);
-      expect(roman).to.equal('I');
-    });
+    var scenarios = [
+      { arabic: 1, roman: 'I' },
+      { arabic: 2, roman: 'II' },
+      { arabic: 3, roman: 'III' },
+      { arabic: 4, roman: 'IV' },
+      { arabic: 17, roman: 'XVII' },
+      { arabic: 25, roman: 'XXV' },
+      { arabic: 1024, roman: 'MXXIV' },
+      { arabic: 2974, roman: 'MMCMLXXIV' },
+    ];
 
-    it('it should convert 2 into II', function () {
-      var roman = converter.arabic2roman(2);
-      expect(roman).to.equal('II');
-    });
-
-    it('it should convert 3 into III', function () {
-      var roman = converter.arabic2roman(3);
-      expect(roman).to.equal('III');
-    });
-
-    it('it should convert 4 into IV', function () {
-      var roman = converter.arabic2roman(4);
-      expect(roman).to.equal('IV');
-    });
-
-    it('it should convert 25 into XXV', function () {
-      var roman = converter.arabic2roman(25);
-      expect(roman).to.equal('XXV');
-    });
-
-    it('it should convert 1024 into MXXIV', function () {
-      var roman = converter.arabic2roman(1024);
-      expect(roman).to.equal('MXXIV');
-    });
+    scenarios.forEach(function (scenario) {
+      it('it should convert ' + scenario.arabic + ' into ' + scenario.roman + '', function () {
+        var roman = converter.arabic2roman(scenario.arabic);
+        expect(roman).to.equal(scenario.roman);
+      });
+    }, this);
   });
 }); 

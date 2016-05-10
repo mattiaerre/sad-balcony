@@ -15,3 +15,7 @@ touch .gitignore
 npm install nodemon --save-dev
 
 npm install request --save
+
+http://makerlog.org/posts/creating-js-library-builds-with-browserify-and-other-npm-modules
+
+

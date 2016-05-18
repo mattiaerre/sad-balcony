@@ -8,7 +8,7 @@ var converter = require('../../domain/converter');
 
 // specs
 describe('given a number converter', function () {
-  describe('when converting from arabic into roman', function () {
+  describe('when converting arabic to roman', function () {
     var scenarios = [
       { arabic: 1, roman: 'I' },
       { arabic: 2, roman: 'II' },
@@ -21,7 +21,7 @@ describe('given a number converter', function () {
     ];
 
     scenarios.forEach(function (scenario) {
-      it('it should convert ' + scenario.arabic + ' into ' + scenario.roman + '', function () {
+      it('it should convert ' + scenario.arabic + ' to ' + scenario.roman + '', function () {
         var roman = converter.arabic2roman(scenario.arabic);
         expect(roman).to.equal(scenario.roman);
       });
